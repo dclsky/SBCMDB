@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}
+    service_register
+{% endblock %}
+
+{% block label %}
+    service_register
+{% endblock %}
+
+{% block content %}
+{#    <table>#}
+{#        {% for filed in regist %}#}
+{#            <tr style = "color: red">#}
+{#                <th class = "center">#}
+{#                   {{ filed.label_tag }}{# 字段的标签 #}
+{#                </th>#}
+{#                <td class = "center">#}
+{#                    {{ filed }} {# 具体的字段内容 #}
+{#                </td>#}
+{#                <td class = "center">#}
+{#                    {{ filed.errors }} {# 字段的错误 #}
+{#                </td>#}
+{#            </tr>#}
+{#        {% endfor %}#}
+{#    </table>#}
+    {{ ourform.as_p }}
+{% endblock %}
+

@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+
+{% block title %}
+    service_register
+{% endblock %}
+
+{% block style %}
+    <script src = "/static/vendor/jquery/jquery.min.js"></script>
+{% endblock %}
+
+{% block label %}
+    service_register
+{% endblock %}
+
+{% block content %}
+
+    <form method = "post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ users.as_p }}
+        <p>
+        <input class = "btn btn-success" type = "submit" value = "提交">
+        </p>
+    </form>
+      <!--
+    <input type = "file" name = "userphoto" id = "userphoto">
+    <br \>
+    <button id = "submit" class = "btn btn-primary">提交</button>
+    <br \>
+    <img src = "" id = "users">
+    <script>
+        $(
+            function () {
+                $("#submit").click(
+                    function () {
+                        var data = $("#userphoto")[0].files[0]; //获取图片内容
+                        var form = new FormData(); //创建一个form类
+                        form.append("img",data); //添加数据
+                        form.append("csrfmiddlewaretoken","{{ csrf_token }}");
+                        $.ajax(
+                            {
+                                url:"/server/save_Img/",
+                                type:"POST",
+                                data:form,
+                                dataType:"json",
+                                processData:false, //不进行序列化
+                                contentType:false, //不进行类型检测
+                                success:function (data) {
+                                    var src = data["data"];
+                                    $("#users").attr("src",src);
+                                    console.log(data)
+                                },
+                                error:function (error) {
+                                    console.log(error)
+                                }
+                            }
+                        )
+
+                    }
+                )
+            }
+        )
+    </script>
+    -->
+{% endblock %}

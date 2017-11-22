@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}
+    service
+{% endblock %}
+
+{% block label %}
+    service
+{% endblock %}
+
+{% block content %}
+    {{ request }}
+
+    {% for d in req %}
+        <p>{{ d }}</p>
+    {% endfor %}
+{% endblock %}
+
